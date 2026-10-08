@@ -26,5 +26,8 @@ json_data = fetch_data( url_builder(lat, lon) )
 temperature = str( json_data['main']['temp'] )
 timestamp = time_converter( json_data['dt'] )
 description = json_data['weather'][0]['description']
-print("Current weather")
+place = json_data['name']
+sunset = json_data['sys']['sunset']
+print("Current weather in " + place)
 print(timestamp + " : " + temperature +  " : " + description)
+print("Sunset at " + time_converter(sunset))
